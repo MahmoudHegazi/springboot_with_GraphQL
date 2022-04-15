@@ -1,0 +1,15 @@
+type Dog {
+    id: ID!
+    name: String!
+    modal: String!
+}
+
+type Query{
+    getAllDogs: [Dog]!
+}
+
+type Mutation{
+    newDog(name: String!, modal: String) : Dog!
+    deleteDog(id:ID!) : Boolean!
+    updateDogName(newName: String!, id: ID!) : Dog!
+}
