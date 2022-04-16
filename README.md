@@ -12,6 +12,7 @@ If you need start simple spring boot with graphql you can use this repo
 ```
 
 # mutation
-{
-    "query":"mutation {updateDogName(newName:\"Ghost\", id:4) { id name breed } }"
-}
+```
+{ "query":"mutation {updateDogName(newName:\"Ghost\", id:4) { id name breed } }" }
+
+```
