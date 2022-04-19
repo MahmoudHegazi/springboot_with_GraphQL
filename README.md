@@ -39,3 +39,19 @@ If you need start simple spring boot with graphql you can use this repo
             <version>5.0.2</version>
         </dependency>
 ```
+
+### setup
+
+```
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2
+spring.datasource.url=jdbc:h2:mem:dogdata
+
+graphql.servlet.mapping=/graphql
+graphql.servlet.enabled=true
+graphql.servlet.corsEnabled=true
+
+graphiql.enabled=true
+graphiql.endpoint=/graphql
+graphiql.mapping=graphiql
+```
