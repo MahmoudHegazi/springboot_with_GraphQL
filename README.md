@@ -43,9 +43,12 @@ If you need start simple spring boot with graphql you can use this repo
 ### setup
 
 ```
+spring.jpa.defer-datasource-initialization=true
+spring.datasource.driverClassName=org.h2.Driver
+
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2
-spring.datasource.url=jdbc:h2:mem:dogdata
+spring.datasource.url=jdbc:h2:mem:newdogdata
 
 graphql.servlet.mapping=/graphql
 graphql.servlet.enabled=true
@@ -54,4 +57,14 @@ graphql.servlet.corsEnabled=true
 graphiql.enabled=true
 graphiql.endpoint=/graphql
 graphiql.mapping=graphiql
+```
+
+#### auto incerment to work smooth with graphql mutations inserts
+```@GeneratedValue(strategy = GenerationType.IDENTITY)``` instead of ```@GeneratedValue(strategy = GenerationType.AUTO)```
+
+```
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY) 
+@Column(name = "id", nullable = false)
+private Long id;
 ```
